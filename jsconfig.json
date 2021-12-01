@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+      "target": "es6",
+      "module": "commonjs",
+      "jsx": "react",
+      "allowSyntheticDefaultImports": true,
+      "baseUrl": "./",
+      "paths": {
+        "@config/*": ["src/config/*"],
+        "@constants/*": ["src/constants/*"],
+        "@layouts/*": ["src/layouts/*"],
+        "@modules/*": ["src/modules/*"],
+        "@resources/*": ["src/resources/*"],
+        "@services/*": ["src/services/*"],
+        "@styles/*": ["src/styles/*"],
+        "@utils/*": ["src/utils/*"],
+
+        "@argon-ui/*": ["src/layouts/Argon-ui/*"]
+      }
+    },
+    "exclude": ["node_modules", "dist"]
+}

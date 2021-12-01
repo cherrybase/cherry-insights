@@ -1,0 +1,94 @@
+.loader-inline {
+    position: relative;
+    min-height: 150px;
+    &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: block;
+        z-index: 99;
+        background: rgba(256, 256, 256, 0.8);
+        left: 0;
+        top: 0;
+    }
+    &:after {
+        content: "";
+        display: block;
+        background-image: url("./amx-loader.gif");
+        width: 56px;
+        height: 56px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        transform: rotate(45deg);
+        position: absolute;
+        left: 50%;
+        //   left: calc(50% - 38px);
+        top: 50%;
+        //   top: calc(50% - 99px);
+        z-index: 100;
+        transform: translateY(-50%);
+    }
+}
+
+.loader-s-inline {
+    position: relative;
+    min-height: 100px;
+    &:before {
+        z-index: 1;
+        width: 100%;
+        content: "";
+        height: 100%;
+        background: #ffffffc7;
+        position: absolute;
+        background: rgba(256, 256, 256, 0.8);
+        display: flex;
+    }
+    &:after {
+        content: "";
+        border: 3px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 3px solid #62c26a;
+        width: 30px;
+        height: 30px;
+        -webkit-animation: spin 1.2s linear infinite;
+        animation: spin 1.2s linear infinite;
+        margin: 0 auto;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 34%;
+        z-index: 2;
+    }
+}
+
+.loader-s-inline-field {
+    position: relative;
+    &:before {
+        z-index: 1;
+        width: 100%;
+        content: "";
+        height: 100%;
+        background: #ffffffc7;
+        position: absolute;
+        background: rgba(256, 256, 256, 0.8);
+        display: flex;
+    }
+    &:after {
+        content: "";
+        border: 3px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 3px solid #62c26a;
+        width: 30px;
+        height: 30px;
+        -webkit-animation: spin 1.2s linear infinite;
+        animation: spin 1.2s linear infinite;
+        margin: 0 auto;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 34%;
+        z-index: 2;
+    }
+}

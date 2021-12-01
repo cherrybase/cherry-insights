@@ -1,0 +1,34 @@
+.toast-container {
+    .custom-toast {
+        .title-container {
+            margin: 6px 0 6px 0;
+            .title {
+                font-weight: 200;
+            }
+            .svgicons-warning {
+                font-size: 26px;
+                line-height: 1px;
+                &:before {
+                    position: relative;
+                    top: 4px;
+                }
+            }
+        }
+        .desc {
+            font-size: 14px;
+        }
+    }
+    .toast-progress {
+        top: 2px;
+        left: 4px;
+        right: 5px;
+        border-radius: 2px;
+        background: #fff;
+        opacity: 0.8;
+    }
+}
+
+.toast-container > div {
+    border-radius: 8px;
+    padding: 12px;
+}
