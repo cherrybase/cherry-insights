@@ -15,7 +15,7 @@ import { store } from "./store";
 import Routes from "./routes";
 import { ErrorBoundary, GlobalModal, ToastUtil } from "./modules/utils";
 
-__webpack_public_path__ = `${window.CONST?.remoteJsUrl || "https://localhost:3000"}/dist/`;
+__webpack_public_path__ = "https://cherrybase.github.io/cherry-insights/" || `${window.CONST?.remoteJsUrl || "https://localhost:3000"}/dist/`;
 
 const Root = () => (
     <Provider store={store}>

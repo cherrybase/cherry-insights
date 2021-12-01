@@ -9,7 +9,7 @@
     "dev-server": "node webpack.devServer.js https",
     "build": "webpack --mode production",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [
     "dashboard",
