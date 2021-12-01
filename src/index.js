@@ -15,11 +15,14 @@ import { store } from "./store";
 import Routes from "./routes";
 import { ErrorBoundary, GlobalModal, ToastUtil } from "./modules/utils";
 
-__webpack_public_path__ = "https://cherrybase.github.io/cherry-insights/" || `${window.CONST?.remoteJsUrl || "https://localhost:3000"}/dist/`;
+__webpack_public_path__ =
+    window.location.href.indexOf("github.io") > -1
+        ? `https://cherrybase.github.io/cherry-insights/`
+        : `${window.CONST?.remoteJsUrl || "https://localhost:3000"}/dist/`;
 
 const Root = () => (
     <Provider store={store}>
-        <BrowserRouter>
+        <BrowserRouter basename="/cherry-insights"> {/* https://github.com/facebook/create-react-app/issues/1765 */}
             <ErrorBoundary>
                 <div className="app">
                     <Routes />
