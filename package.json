@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "Admin dashboard for customer digital journey",
   "main": "index.js",
+  "homepage": "https://cherrybase.github.io/cherry-insights",
   "scripts": {
     "serve": "webpack serve --mode development",
     "dev-server": "node webpack.devServer.js https",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [
     "dashboard",
@@ -23,6 +26,7 @@
     "chartjs-adapter-moment": "^1.0.0",
     "chartjs-plugin-zoom": "^1.1.1",
     "classnames": "^2.3.1",
+    "gh-pages": "^3.2.3",
     "moment": "^2.29.1",
     "nouislider": "^15.5.0",
     "react": "^17.0.2",
