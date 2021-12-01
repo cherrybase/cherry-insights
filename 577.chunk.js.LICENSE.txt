@@ -1,0 +1,23 @@
+/*!
+  * chartjs-adapter-moment v1.0.0
+  * https://www.chartjs.org
+  * (c) 2021 chartjs-adapter-moment Contributors
+  * Released under the MIT license
+  */
+
+/*!
+* chartjs-plugin-zoom v1.1.1
+* undefined
+ * (c) 2016-2021 chartjs-plugin-zoom Contributors
+ * Released under the MIT License
+ */
+
+/*! Hammer.JS - v2.0.7 - 2016-04-22
+ * http://hammerjs.github.io/
+ *
+ * Copyright (c) 2016 Jorik Tangelder;
+ * Licensed under the MIT license */
+
+//! moment.js
+
+//! moment.js locale configuration
