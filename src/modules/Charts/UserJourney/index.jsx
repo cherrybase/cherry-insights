@@ -82,7 +82,7 @@ export default function UserJourney() {
 
         try {
             let resp = await Api.root.get(
-                "https://apib-kwt.almullaexchange.com/xms/api/v1/client/register/event",
+                "/client/register/event",
                 {},
                 {
                     headers: {
@@ -126,7 +126,7 @@ export default function UserJourney() {
 
     const fetchData = async (min, max, eventNameList) => {
         let resp = await Api.root.post(
-            "https://apib-kwt.almullaexchange.com/xms/api/v1/digital/analytics/user-events-count",
+            "/digital/analytics/user-events-count",
             {
                 dateRange1: min,
                 dateRange1Str: new Date(min),

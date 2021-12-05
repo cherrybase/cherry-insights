@@ -22,7 +22,7 @@ const TrafficAnalysis = props => {
         const start = end - displayFormatSuccessor.ms;
         setTimeRange(prev => ({ ...prev, min: start, max: end }));
 
-        let data = await fetchApiData(start, end);
+        let data = await fetchApiData(start, end, defaultDisplayFormat);
         console.log("TrafficAnalysis - Fetched data between " + new Date(start) + " and " + new Date(end), { data });
         let [labels, _data] = processData(data);
         setChartData({
@@ -45,7 +45,7 @@ const TrafficAnalysis = props => {
         try {
             setLoading(true);
             let resp = await Api.root.post(
-                "https://apib-kwt.almullaexchange.com/xms/api/v1/digital/analytics/web-referrers-count",
+                "/digital/analytics/web-referrers-count",
                 {
                     dateRange1: min,
                     dateRange1Str: new Date(min),

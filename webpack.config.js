@@ -87,7 +87,14 @@ module.exports = (env, options) => {
                 },
                 {
                     test: /\.(woff|woff2|eot|ttf|svg)$/,
-                    type: "asset/resource" // webpack 5 way of handling
+                    type: "asset/resource", // webpack 5 way of handling
+                    ...(isDevelopment ? {
+                        generator : {
+                            filename : pathData => {
+                                return `/[name][ext][query]`
+                            }
+                        }
+                    } : {})
                     // use: [
                     //     {
                     //         loader: 'file-loader',
@@ -125,7 +132,14 @@ module.exports = (env, options) => {
                 },
                 {
                     test: /\.(gif|png)$/,
-                    type: "asset/resource" // webpack 5 way of handling
+                    type: "asset/resource", // webpack 5 way of handling
+                    ...(isDevelopment ? {
+                        generator : {
+                            filename : pathData => {
+                                return `/[name][ext][query]`
+                            }
+                        }
+                    } : {})
                     // use: [
                     //     {
                     //         loader: 'url-loader',
@@ -143,6 +157,7 @@ module.exports = (env, options) => {
             new CleanWebpackPlugin(),
             new HtmlWebpackPlugin({
                 template: "./src/index.html",
+                base: isDevelopment ? "" : "https://cherrybase.github.io/cherry-insights/",
                 filename: "index.html",
                 favicon: "./src/styles/amx-favicon.ico"
             }),

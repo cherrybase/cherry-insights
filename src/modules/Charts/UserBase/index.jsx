@@ -27,7 +27,7 @@ const UserBase = props => {
         const axisStart = start - 1000 * 60 * 60 * 24 * 365;
         setTimeAxisRange(prev => ({ ...prev, min: axisStart, max: axisEnd }));
 
-        let data = await fetchApiData(start, end);
+        let data = await fetchApiData(start, end, defaultDisplayFormat);
         console.log("UserBase - Fetched data between " + new Date(start) + " and " + new Date(end), { data });
         setChartData({
             datasets: [
@@ -111,7 +111,7 @@ const UserBase = props => {
 
     const fetchApiData = async (min, max, df = displayFormat) => {
         let resp = await Api.root.post(
-            "https://apib-kwt.almullaexchange.com/xms/api/v1/digital/analytics/app-user-base",
+            "/digital/analytics/app-user-base",
             {
                 dateRange1: min,
                 dateRange1Str: new Date(min),

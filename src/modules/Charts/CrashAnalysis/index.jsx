@@ -27,7 +27,7 @@ const CrashAnalysis = props => {
         const axisStart = start - 1000 * 60 * 60 * 24 * 365;
         setTimeAxisRange(prev => ({ ...prev, min: axisStart, max: axisEnd }));
 
-        let data = await fetchApiData(start, end);
+        let data = await fetchApiData(start, end, defaultDisplayFormat);
         console.log("CrashAnalysis - Fetched data between " + new Date(start) + " and " + new Date(end), { data });
         setChartData({
             datasets: [
@@ -89,7 +89,7 @@ const CrashAnalysis = props => {
 
     const fetchApiData = async (min, max, df = displayFormat) => {
         let resp = await Api.root.post(
-            "https://apib-kwt.almullaexchange.com/xms/api/v1/digital/analytics/app-crashes-count",
+            "/digital/analytics/app-crashes-count",
             {
                 dateRange1: min,
                 dateRange1Str: new Date(min),

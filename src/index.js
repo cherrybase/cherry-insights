@@ -35,3 +35,7 @@ const Root = () => (
 );
 
 render(<Root />, document.getElementById("app"));
+
+if (module["hot"]) {
+    module["hot"].accept();
+}
