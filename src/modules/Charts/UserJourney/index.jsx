@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Table } from "reactstrap";
 import { useTable, useSortBy, useFilters, usePagination } from "react-table";
-import Select from "react-select";
 import { displayFormatsMap, defaultDisplayFormat, getFilteredDisplayFormats } from "@modules/Charts/constants";
 import { Api } from "@services/ApiService";
 import FormField from "@modules/Common/FormField";
@@ -91,7 +90,7 @@ export default function UserJourney() {
                 }
             );
             let results = resp.data.results[0].metaEventDoc;
-            setOpts(results.map(el => ({ label: el.eventName, value: el.eventName })));
+            setOpts(results.map(el => ({ label: el.eventDesc ? el.eventDesc : el.eventName, value: el.eventName })));
         } catch (error) {}
 
         return () => {

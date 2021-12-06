@@ -13,6 +13,7 @@ import ActiveUsers from "@modules/Charts/ActiveUsers";
 import CrashAnalysis from "@modules/Charts/CrashAnalysis";
 import TrafficAnalysis from "@modules/Charts/TrafficAnalysis";
 import UserJourney from "@modules/Charts/UserJourney";
+import EngagementAnalysis from "@modules/Charts/EngagementAnalysis";
 
 const scrollToRef = ref => ref.current.scrollIntoView({ behavior: "smooth" });
 
@@ -215,6 +216,23 @@ const Dashboard = props => {
                         </CardHeader>
                         <CardBody>
                             <CrashAnalysis />
+                        </CardBody>
+                    </Card>
+                </Col>
+            </Row>
+            <Row className="mt-5">
+                <Col className="mb-5 mb-xl-0" xl="12">
+                    <Card className="shadow">
+                        <CardHeader className="bg-transparent">
+                            <Row className="align-items-center">
+                                <div className="col">
+                                    <h6 className="text-uppercase text-light ls-1 mb-1">Bar</h6>
+                                    <h2 className="mb-0">Engagement Analysis</h2>
+                                </div>
+                            </Row>
+                        </CardHeader>
+                        <CardBody>
+                            <EngagementAnalysis />
                         </CardBody>
                     </Card>
                 </Col>
